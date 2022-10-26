@@ -1,0 +1,63 @@
+@startuml
+
+title Store Inventory
+
+class Product {
+    +name:String
+    +code:int
+    .. Methods ..
+    +show()
+    +getName(): String
+    +getCode(): int
+    +setName(): StringÍ
+     +setCode() :int
+}
+
+class Clothing {
+    +size: String
+    +idealFor: String
+    .. Methods ..
+    +show(): void
+    +getSize(): String
+    +getIdealFor(): String
+}
+
+ 
+class Electronics {
+    +brand: String
+    +warranty: String
+    .. Methods ..
+    +show(): void
+    +getSize(): String
+    +getWarranty(): String
+}
+
+Product <|-- Clothing: Inheritance
+Product <|-- Electronics: Inheritance
+
+class Department {
+    {abstract} +getProduct(): Product
+    {abstract} +sell(product: Product)
+}
+
+class ClothingDepartment {
+    +getProduct(): Product
+    +sell(product: Product)
+}
+
+class ElectronicsDepartment {
+    +getProduct(): Product
+    +sell(product: Product)
+}
+
+Department <|-- ClothingDepartment: Inheritance
+Department <|-- ElectronicsDepartment: Inheritance
+
+note right of Department: Factory method pattern.\nDefines an abstract factory method getProduct().\nIt is used to get product from inventory to sell.
+
+note bottom of ClothingDepartment: Concrete implementation of getProduct()\nto return clothing product from inventory.
+
+note bottom of ElectronicsDepartment: Concrete implementation of getProduct()\nto return electronics product from inventory.
+
+
+@enduml

@@ -1,0 +1,19 @@
+***TESTING VALID ADDRESSES
+50 Phelan Ave	Ocean Campus	San Francisco, CA 94112
+50 Phelan Ave	San Francisco, CA 94112
+
+***TESTING INVALID ADDRESSES
+IllegalArgumentException: Invalid address value [state="California"]; state must be exactly 2 characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [state=""]; state must be exactly 2 characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [street=""]; street must be 1 or more characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [city=""]; city must be 1 or more characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [city="Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch"]; city can have a maximum of 40 characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [zip="9411"]; zip must be exactly 5 characters.
+Should print null: null
+IllegalArgumentException: Invalid address value [zip="941121"]; zip must be exactly 5 characters.
+Should print null: null

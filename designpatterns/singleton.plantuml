@@ -1,0 +1,14 @@
+@startuml
+
+title Singleton Pattern
+
+class Singleton {
+    {static} - INSTANCE: Singleton
+    .. Methods ..
+    - Singleton()
+    + getInstance(): Singleton    
+}
+
+note bottom of Singleton: Restrict the instantiation of the class to one.
+
+@enduml
